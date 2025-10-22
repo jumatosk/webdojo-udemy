@@ -1,5 +1,5 @@
 describe("Login", () => {
-  it.only("Deve realizar login com sucesso", () => {
+  it("Deve realizar login com sucesso", () => {
     cy.start();
     cy.submitLogin(Cypress.env("USER_EMAIL"), Cypress.env("USER_PASSWORD"));
 
@@ -8,7 +8,7 @@ describe("Login", () => {
       .and("have.text", "Fernando Papito");
   });
 
-  it("Deve exibir mensagem de erro ao inserir credenciais inválidas", () => {
+  it.skip("Deve exibir mensagem de erro ao inserir credenciais inválidas", () => {
     cy.start();
     cy.submitLogin("papito@webdojo.com", "katan3");
 
