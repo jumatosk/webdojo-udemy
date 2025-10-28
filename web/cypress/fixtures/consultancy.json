@@ -1,0 +1,16 @@
+{
+  "personal": {
+    "name": "Juliana Matos",
+    "email": "juliana@webdojo.com",
+    "phone": "71988884545",
+    "personType": "Pessoa Física",
+    "document": "23458099069"
+  },
+  "company": {
+    "name": "WebDojo Treinamentos",
+    "email": "juliana@webdojo.com",
+    "phone": "71988884545",
+    "personType": "Pessoa Jurídica",
+    "document": "53097999000103"
+  }
+}
