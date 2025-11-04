@@ -9,9 +9,11 @@ describe("Formulário de consultoria", () => {
     // cy.get("#name").type("Juliana Matos");
     // cy.get("#email").type("juliana@webdojo");
 
-    cy.get("input[placeholder='Digite seu nome completo']").type("");
-    cy.get("input[placeholder='Digite seu email']").type("");
-    cy.get("input[placeholder='(00) 00000-0000']").type("");
+    cy.get("input[placeholder='Digite seu nome completo']").type(
+      "Juliana Matos"
+    );
+    cy.get("input[placeholder='Digite seu email']").type("jumatosk@gmail.com");
+    cy.get("input[placeholder='(00) 00000-0000']").type("719988884545");
     // .should("have.value", "(71) 98888-4545");
 
     //Estratégia utilizada para encontrar campo através do id

@@ -9,7 +9,7 @@ describe("Links em nova guia/janela", () => {
   });
 
   //Acessando o link sem abrir uma nova guia/janela
-  it.only("Acessando o link do instagram sem abrir nova guia/janela", () => {
+  it("Acessando o link do instagram sem abrir nova guia/janela", () => {
     cy.start();
     cy.submitLogin("papito@webdojo.com", "katana123");
 
