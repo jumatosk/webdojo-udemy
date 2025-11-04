@@ -1,3 +1,5 @@
+import address from "../fixtures/address.json";
+
 describe("CEP", () => {
   beforeEach(() => {
     cy.start();
@@ -6,13 +8,13 @@ describe("CEP", () => {
   });
 
   it("Deve validar a consulta de CEP", () => {
-    cy.log("todo");
-
-    cy.get("#cep").type("40240725");
+    // Fazer a modelagem da massa conforme a modelagem da aplicação
+    cy.get("#cep").type(address.cep);
     cy.contains("button", "Buscar").click();
 
-    cy.get("#street").should("have.value", "Rua Icó");
-
-    //Pendente validar os próximos campos
+    cy.get("#street").should("have.value", address.street);
+    cy.get("#neighborhood").should("have.value", address.neighborhood);
+    cy.get("#city").should("have.value", address.city);
+    cy.get("#state").should("have.value", address.state);
   });
 });
