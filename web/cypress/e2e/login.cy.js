@@ -1,11 +1,19 @@
+import { todayDateFormatted } from "../support/formattedDate";
+
 describe("Login", () => {
-  it("Deve realizar login com sucesso", () => {
+  it.only("Deve realizar login com sucesso", () => {
     cy.start();
     cy.submitLogin(Cypress.env("USER_EMAIL"), Cypress.env("USER_PASSWORD"));
 
     cy.get('[data-cy="user-name"]')
       .should("be.visible")
       .and("have.text", "Fernando Papito");
+
+    cy.getCookie("login_date").should("exist");
+
+    cy.getCookie("login_date").should((cookie) => {
+      expect(cookie.value).to.equal(todayDateFormatted());
+    });
   });
 
   it.skip("Deve exibir mensagem de erro ao inserir credenciais inválidas", () => {
