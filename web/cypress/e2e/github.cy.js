@@ -1,6 +1,5 @@
 describe("Gerenciamento de perfis no Github", () => {
   beforeEach(() => {
-    cy.start();
     cy.submitLogin(Cypress.env("USER_EMAIL"), Cypress.env("USER_PASSWORD"));
     cy.goTo("Tabela", "Perfis do GitHub");
   });

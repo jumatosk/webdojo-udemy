@@ -2,7 +2,6 @@ import address from "../fixtures/address.json";
 
 describe("CEP", () => {
   beforeEach(() => {
-    cy.start();
     cy.submitLogin(Cypress.env("USER_EMAIL"), Cypress.env("USER_PASSWORD"));
     cy.goTo("Integração", "Consulta de CEP");
   });

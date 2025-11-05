@@ -1,6 +1,5 @@
 describe("Kanban Board", () => {
   it("Deve mover uma tarefa de ToDo para Done e atualizar o board.", () => {
-    cy.start();
     cy.submitLogin(Cypress.env("USER_EMAIL"), Cypress.env("USER_PASSWORD"));
     cy.contains("Kanban").click();
 

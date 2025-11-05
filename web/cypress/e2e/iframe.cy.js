@@ -1,6 +1,5 @@
 describe("iFrame", () => {
   it("Deve tocar o vídeo corretamente", () => {
-    cy.start();
     cy.submitLogin(Cypress.env("USER_EMAIL"), Cypress.env("USER_PASSWORD"));
     cy.contains("Video").click();
 

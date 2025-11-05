@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import "cypress-real-events";
+import { todayDateFormatted } from "./formattedDate";
 
 Cypress.Commands.add("start", () => {
   cy.viewport(1200, 840);
@@ -31,7 +32,17 @@ Cypress.Commands.add("start", () => {
 });
 
 Cypress.Commands.add("submitLogin", (email, password) => {
-  cy.get("#email").type(email);
-  cy.get("#password").type(password);
-  cy.contains("button", "Entrar").click();
+  // cy.get("#email").type(email);
+  // cy.get("#password").type(password);
+  // cy.contains("button", "Entrar").click();
+
+  const token = "e1033d63a53fe66c0fd3451c7fd8f617";
+  const loginDate = todayDateFormatted();
+
+  cy.setCookie("login_date", loginDate);
+  cy.visit("/dashboard", {
+    onBeforeLoad: (window) => {
+      window.localStorage.setItem("token", token);
+    },
+  });
 });

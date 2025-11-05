@@ -1,6 +1,5 @@
 describe("Formulário de consultoria", () => {
   beforeEach(() => {
-    cy.start();
     cy.submitLogin("papito@webdojo.com", "katana123");
     cy.goTo("Formulários", "Consultoria");
   });
