@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "serve -s dist -p 3000",
-    "cyo": "cypress open"
+    "cyo": "cypress open",
+    "test": "npx cypress run",
+    "test:spec": "npx cypress run --spec"
   },
   "dependencies": {
     "cypress-real-events": "^1.15.0",
