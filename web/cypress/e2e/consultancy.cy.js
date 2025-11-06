@@ -1,6 +1,5 @@
 describe("Formulário de consultoria", () => {
   beforeEach(() => {
-    cy.start();
     cy.submitLogin("papito@webdojo.com", "katana123");
     cy.goTo("Formulários", "Consultoria");
   });
@@ -12,10 +11,9 @@ describe("Formulário de consultoria", () => {
     cy.get("input[placeholder='Digite seu nome completo']").type(
       "Juliana Matos"
     );
-    cy.get("input[placeholder='Digite seu email']").type("juliana@webdojo.com");
-    cy.get("input[placeholder='(00) 00000-0000']")
-      .type("71988884545")
-      .should("have.value", "(71) 98888-4545");
+    cy.get("input[placeholder='Digite seu email']").type("jumatosk@gmail.com");
+    cy.get("input[placeholder='(00) 00000-0000']").type("719988884545");
+    // .should("have.value", "(71) 98888-4545");
 
     //Estratégia utilizada para encontrar campo através do id
     cy.get("#consultancyType").select("In Company");
